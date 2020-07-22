@@ -303,7 +303,6 @@ public class ResourceCentre {
 				chromebookList.get(i).setDueDate("");
 				isReturned = true;
 				System.out.println("Chromebook " + tag + " returned");
-				
 			}
 		}
 		return isReturned;
@@ -318,7 +317,7 @@ public class ResourceCentre {
 		
 		if (isReturned == false) {
 			System.out.println("Invalid asset tag");
-		} else {
+		} else { 
 			System.out.println("Chromebook " + tag + " returned"); 
 		}
 	}
