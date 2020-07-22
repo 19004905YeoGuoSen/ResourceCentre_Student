@@ -170,6 +170,7 @@ public class ResourceCentre {
 		System.out.println("Camcorder added");
 	}
 	
+	// This part is done by Marcus
 	public static Chromebook inputChromebook() {	
 		Chromebook cb =null;
 		String tag = Helper.readString("Enter asset tag > ");
@@ -180,6 +181,7 @@ public class ResourceCentre {
 		return cb;
 		
 	}	
+	//This part is done by Marcus
 	public static void addChromebook(ArrayList<Chromebook> chromebookList, Chromebook cb) {
 		chromebookList.add(cb);
 		System.out.println("Chromebook added");
