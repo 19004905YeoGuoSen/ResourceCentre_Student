@@ -152,10 +152,26 @@ public class ResourceCentreTest {
 	
 	@Test
 	public void doReturnCamcorderTest() {
-		//fail("Not yet implemented");
-		// write your code here
+		//Done by Wen Zhen
 		
+		//Test for boundary condition
+		assertNotNull("Test if there is valid Camcorder arraylist to add to", camcorderList);
+		
+		//Test for error condition 
+		Boolean isReturned = ResourceCentre.doReturnCamcorder(camcorderList, "CC0011");
+		assertFalse("Test if available camcorder CC0011 is returned false?", isReturned);
+		
+		//Test for normal condition
+		ResourceCentre.addCamcorder(camcorderList, cc2);
+		cc2.setIsAvailable(false);
+		isReturned = ResourceCentre.doReturnCamcorder(camcorderList, "CC0012");
+		assertTrue("Test if loaned out camcorder CC0012 is returned true", isReturned);
+		
+		//test for error condition 
+		isReturned = ResourceCentre.doReturnCamcorder(camcorderList, "CC0013");
+		assertTrue("Test if non-existing camcorder CC0013 is returned false", isReturned);
 	}
+	
 	@Test
 	public void doReturnChromebookTest() {
 		//fail("Not yet implemented");
