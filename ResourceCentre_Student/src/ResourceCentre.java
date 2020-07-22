@@ -240,7 +240,7 @@ public class ResourceCentre {
 		return isLoaned;
 	}
 	
-	//Done By Wen Zhen
+	//Done By Wen Zhen 
 	public static void loanChromebook(ArrayList<Chromebook> chromebookList) {
 		ResourceCentre.viewAllChromebook(chromebookList);
 		String tag = Helper.readString("Enter asset Tag > ");
