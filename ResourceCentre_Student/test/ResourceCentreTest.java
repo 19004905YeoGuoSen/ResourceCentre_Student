@@ -129,6 +129,7 @@ public class ResourceCentreTest {
 		
 		//Test for boundary condition
 		assertNotNull("test if there is valid Chromebook arraylist to loan from", chromebookList);
+				
 		ResourceCentre.addChromebook(chromebookList,  cb1);
 				
 		//Test for normal condition 
@@ -140,7 +141,7 @@ public class ResourceCentreTest {
 				
 		//Test for error condition
 		ResourceCentre.addChromebook(chromebookList, cb2);
-		cb2.setIsAvailable(false);
+		cc2.setIsAvailable(false);
 		ok = ResourceCentre.doLoanChromebook(chromebookList, "CB0012", "8-8-2020");
 		assertFalse("Test the unavailable item is NOT ok to loan?", ok);
 				
