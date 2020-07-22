@@ -96,11 +96,30 @@ public class ResourceCentreTest {
 		// write your code here
 	}
 
-	@Test
+	@Test 
+	//Done by Wen Zhen
 	public void doLoanCamcorderTest() {
-		//fail("Not yet implemented");
-		// write your code here
+		//Test for boundary
+		assertNotNull("test if there is valid Camcorder arraylist to loan from", camcorderList);
 		
+		ResourceCentre.addCamcorder(camcorderList,  cc1);
+		
+		//Test for normal condition 
+		Boolean ok = ResourceCentre.doLoanCamcorder(camcorderList, "CC0011", "8-8-2020");
+		
+		//Test for error condition 
+		ok = ResourceCentre.doLoanCamcorder(camcorderList, "CC0011", "8-8-2020");
+		assertFalse("Test if the same item is NOT ok to loan again?", ok);
+		
+		//Test for error condition
+		ResourceCentre.addCamcorder(camcorderList, cc2);
+		cc2.setIsAvailable(false);
+		ok = ResourceCentre.doLoanCamcorder(camcorderList, "CC0012", "8-8-2020");
+		assertFalse("Test the unavailable item is NOT ok to loan?", ok);
+		
+		//Test for error condition 
+		ok = ResourceCentre.doLoanCamcorder(camcorderList, "CC0013", "8-8-2020");
+		assertFalse("Test the unavailable item is NOT ok to loan?", ok);
 	}
 	
 	@Test
