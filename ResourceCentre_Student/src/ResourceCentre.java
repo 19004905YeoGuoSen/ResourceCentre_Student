@@ -217,12 +217,40 @@ public class ResourceCentre {
 		}
 	}
 	
+	//Done By Wen Zhen
 	public static boolean doLoanChromebook(ArrayList<Chromebook> chromebookList, String tag, String dueDate) {
-		// write your code here
-		return true;
+		boolean isLoaned = false;
+
+		for (int i = 0; i < chromebookList.size(); i++) {
+			if (tag.equalsIgnoreCase(chromebookList.get(i).getAssetTag())
+					&& chromebookList.get(i).getIsAvailable() == true) {
+
+				String duedate = Helper.readString("Enter Due Date > "); 
+				chromebookList.get(i).setIsAvailable(false);
+				chromebookList.get(i).setDueDate(duedate);
+				isLoaned = true;
+				System.out.println("Chromebook " + tag + " loaned out");
+				break;
+			}
+
+			if (isLoaned == true) {
+				System.out.println("Invalid asset tag");
+			}
+		}
+		return isLoaned;
 	}
+	
+	//Done By Wen Zhen
 	public static void loanChromebook(ArrayList<Chromebook> chromebookList) {
-		// write your code here
+		ResourceCentre.viewAllChromebook(chromebookList);
+		String tag = Helper.readString("Enter asset Tag > ");
+		String due = Helper.readString("Enter due date > ");
+		Boolean isLoaned = doLoanChromebook(chromebookList, tag, due);
+		if (isLoaned == false) {
+			System.out.println("Invalid asset tag");
+		} else {
+			System.out.println("Chromebook " + tag + " loaned out");
+		}
 		
 		
 	}
