@@ -287,20 +287,15 @@ public class ResourceCentre {
 	public static boolean doReturnChromebook(ArrayList<Chromebook> chromebookList,String tag){
 		//Write your code here
 		boolean isReturned = false;
-		
-		for (int i = 0; i < chromebookList.size(); i ++) {
-			if (tag.equalsIgnoreCase(chromebookList.get(i).getAssetTag())
-					&& chromebookList.get(i).getIsAvailable() == true) {
 
+		for (int i = 0; i < chromebookList.size(); i++) {
+			if (tag.equalsIgnoreCase(chromebookList.get(i).getAssetTag())
+					&& chromebookList.get(i).getIsAvailable() == false) {
 				chromebookList.get(i).setIsAvailable(true);
 				chromebookList.get(i).setDueDate("");
 				isReturned = true;
-				System.out.println("Chromebook " + tag + " returned");
 				
 			}
-		}
-		if (isReturned == false) {
-			System.out.println("Invalid asset tag");
 		}
 		return isReturned;
 	}
