@@ -151,8 +151,10 @@ public class ResourceCentreTest {
 	}
 	
 	@Test
+	//Done by Wen Zhen
 	public void doReturnCamcorderTest() {
-		//Done by Wen Zhen
+		//fail("Not yet implemented");
+		// write your code here
 		
 		//Test for boundary condition
 		assertNotNull("Test if there is valid Camcorder arraylist to add to", camcorderList);
