@@ -251,8 +251,6 @@ public class ResourceCentre {
 		} else {
 			System.out.println("Chromebook " + tag + " loaned out");
 		}
-		
-		
 	}
 	
 	//================================= Option 4 Return =================================
