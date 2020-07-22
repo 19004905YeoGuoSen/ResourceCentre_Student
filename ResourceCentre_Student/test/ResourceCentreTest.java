@@ -128,7 +128,7 @@ public class ResourceCentreTest {
 		//Done by Wen Zhen
 		
 		//Test for boundary condition
-		assertNotNull("test if there is valid Camcorder arraylist to loan from", chromebookList);
+		assertNotNull("test if there is valid Chromebook arraylist to loan from", chromebookList);
 				
 		ResourceCentre.addChromebook(chromebookList,  cb1);
 				
@@ -169,7 +169,7 @@ public class ResourceCentreTest {
 		
 		//test for error condition 
 		isReturned = ResourceCentre.doReturnCamcorder(camcorderList, "CC0013");
-		assertTrue("Test if non-existing camcorder CC0013 is returned false", isReturned);
+		assertFalse("Test if non-existing camcorder CC0013 is returned false", isReturned);
 	}
 	
 	@Test
