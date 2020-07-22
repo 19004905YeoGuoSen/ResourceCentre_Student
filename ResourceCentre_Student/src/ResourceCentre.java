@@ -159,8 +159,11 @@ public class ResourceCentre {
 	}
 	
 	public static void viewAllChromebook(ArrayList<Chromebook> chromebookList) {
+		ResourceCentre.setHeader("CHROMEBOOK LIST");
+		String output = String.format("%-10s %-30s %-10s %-10s %-20s\n", "ASSET TAG", "DESCRIPTION",
+				"AVAILABLE", "DUE DATE","OPERATING SYSTEM");
 		
-		String output = retrieveAllChromebook(chromebookList);	
+		 output += retrieveAllChromebook(chromebookList);	
 		System.out.println(output);
 	}
 
