@@ -153,9 +153,6 @@ public class ResourceCentreTest {
 	@Test
 	//Done by Wen Zhen
 	public void doReturnCamcorderTest() {
-		//fail("Not yet implemented");
-		// write your code here
-		
 		//Test for boundary condition
 		assertNotNull("Test if there is valid Camcorder arraylist to add to", camcorderList);
 		
@@ -175,9 +172,27 @@ public class ResourceCentreTest {
 	}
 	
 	@Test
+	//Done by Wen Zhen
 	public void doReturnChromebookTest() {
 		//fail("Not yet implemented");
 		// write your code here
+		
+		//Test for boundary condition
+		assertNotNull("Test if there is valid Chromebook arraylist to add to", chromebookList);
+				
+		//Test for error condition 
+		Boolean isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CB0011");
+		assertFalse("Test if available chromebook CB0011 is returned false?", isReturned);
+				
+		//Test for normal condition
+		ResourceCentre.addChromebook(chromebookList, cb2);
+		cb2.setIsAvailable(false);
+		isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CB0012");
+		assertTrue("Test if loaned out chromebook CB0012 is returned true", isReturned);
+				
+		//test for error condition 
+		isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CB0013");
+		assertTrue("Test if non-existing chromebook CC0013 is returned false", isReturned);
 	}
 	
 	@After
