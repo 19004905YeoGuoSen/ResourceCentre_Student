@@ -286,14 +286,16 @@ public class ResourceCentre {
 	//Done by Wen Zhen
 	public static boolean doReturnChromebook(ArrayList<Chromebook> chromebookList,String tag){
 		//Write your code here
-		boolean isReturned = false;
-
-		for (int i = 0; i < chromebookList.size(); i++) {
+boolean isReturned = false;
+		
+		for (int i = 0; i < chromebookList.size(); i ++) {
 			if (tag.equalsIgnoreCase(chromebookList.get(i).getAssetTag())
-					&& chromebookList.get(i).getIsAvailable() == false) {
+					&& chromebookList.get(i).getIsAvailable() == true) {
+
 				chromebookList.get(i).setIsAvailable(true);
 				chromebookList.get(i).setDueDate("");
 				isReturned = true;
+				System.out.println("Chromebook " + tag + " returned");
 				
 			}
 		}
