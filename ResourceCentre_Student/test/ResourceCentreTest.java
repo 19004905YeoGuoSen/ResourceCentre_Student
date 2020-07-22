@@ -141,7 +141,7 @@ public class ResourceCentreTest {
 				
 		//Test for error condition
 		ResourceCentre.addChromebook(chromebookList, cb2);
-		cc2.setIsAvailable(false);
+		cb2.setIsAvailable(false);
 		ok = ResourceCentre.doLoanChromebook(chromebookList, "CB0012", "8-8-2020");
 		assertFalse("Test the unavailable item is NOT ok to loan?", ok);
 				
@@ -151,10 +151,8 @@ public class ResourceCentreTest {
 	}
 	
 	@Test
-	//Done by Wen Zhen
 	public void doReturnCamcorderTest() {
-		//fail("Not yet implemented");
-		// write your code here
+		//Done by Wen Zhen
 		
 		//Test for boundary condition
 		assertNotNull("Test if there is valid Camcorder arraylist to add to", camcorderList);
@@ -175,10 +173,8 @@ public class ResourceCentreTest {
 	}
 	
 	@Test
-	//Done by Wen Zhen
 	public void doReturnChromebookTest() {
-		//fail("Not yet implemented");
-		// write your code here
+		//Done by Wen Zhen
 		
 		//Test for boundary condition
 		assertNotNull("Test if there is valid Chromebook arraylist to add to", chromebookList);
